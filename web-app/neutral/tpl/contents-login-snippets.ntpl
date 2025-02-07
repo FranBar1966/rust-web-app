@@ -1,0 +1,49 @@
+{:* Neutral TS - License in the terms described in the LICENSE file. *:}
+
+{:*
+    Disable modal login and carousel.
+    If you do not disable the login modal, there will be two forms with the same id on the same page.
+*:}
+{:snippet; current-theme-login-form-modal >> :}
+{:snippet; current-theme-body-carousel >> :}
+
+{:snippet; current-theme-body-content-content >>
+    {:filled; CONTEXT->SESSION >>
+        {:filled; CONTEXT->COOKIES->SESSION >>
+            {:redirect; js:redirect:top >> / :}
+        :}{:else;
+            <script>
+                {:*
+                    This is an example, but in a real case, preferably,
+                    session cookies should not be accessible from javascript.
+                *:}
+                document.cookie = "SESSION={:;CONTEXT->SESSION:}; path=/";
+            </script>
+            <script>
+                // Allow time for cookie javascript to run
+                setTimeout(function(){ top.location.href='/' }, 300);
+            </script>
+        :}
+    :}{:else;
+        <main>
+            {:snippet; current-theme-page-title :}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-5 col-12">
+                        <div class="card border-light mb-3 mt-md-4" style="max-width: 480px;">
+                            <div class="card-body px-4 pb-4 pt-3">
+                                {:bool; send_form_login_fails >>
+                                    <div class="alert alert-dismissible alert-danger">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                        {:trans; Try sending again, password: 1234. :}
+                                    </div>
+                                :}
+                                {:snippet; current-theme-login-form :}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    :}
+:}
