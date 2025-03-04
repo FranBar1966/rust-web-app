@@ -1,0 +1,65 @@
+{:* Neutral TS - License in the terms described in the LICENSE file. *:}
+
+{:*
+    Errors
+    ------
+*:}
+
+{:^include; {:flg; require :} >> #/app-snippets.ntpl :}
+
+{:*
+    Generic locale if it exists
+*:}
+{:^locale; #/../data/locale-{:snippet; lang :}.json :}
+
+{:*
+    Locale for current route and lang if it exists
+*:}
+{:^locale; #/../data/route-error-locale-{:snippet; lang :}.json :}
+
+{:*
+    Data for current theme if it exists
+*:}
+{:^data; #/../data/theme-data.json :}
+
+{:*
+    Data for current site if it exists
+*:}
+{:^data; #/../data/site-data.json :}
+
+{:*
+    Data for current route if it exists
+*:}
+{:^data; #/../data/route-error-data.json :}
+
+{:*
+    Snippets of this theme, the order is important, as these
+    snippets can be overwritten by our configuration.
+*:}
+{:^include; {:flg; require :} >> #/theme-snippets.ntpl :}
+
+{:*
+    Custom theme configuration snippets, overwrite the snippets needed theme-snippets
+*:}
+{:^include; {:flg; require :} >> #/theme-setting-snippets.ntpl :}
+
+{:*
+    Snippets icons
+*:}
+{:include; #/icons-{:snippet; current-theme-icons :}-snippets.ntpl :}
+
+{:*
+    Spin
+*:}
+{:snippet; current-theme-spin :}
+
+{:*
+    Content of the route
+    e.g.: contents-home-snippets.ntpl
+*:}
+{:^include; #/contents-error-snippets.ntpl :}
+
+{:*
+    Render theme
+*:}
+{:^include; {:flg; require :} >> #/theme.ntpl :}

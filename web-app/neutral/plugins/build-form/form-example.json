@@ -1,0 +1,329 @@
+{
+    "data": {
+        "options-for-select": {
+            "countries": {
+                "A": "Albania",
+                "B": "Belarus",
+                "C": "Cameroon",
+                "D": "Denmark",
+                "E": "Ecuador",
+                "F": "Fiji",
+                "G": "Ghana",
+                "H": "Honduras",
+                "I": "Iceland",
+                "J": "Japan",
+                "K": "Kazakhstan",
+                "L": "Latvia",
+                "M": "Malaysia",
+                "N": "Nepal",
+                "O": "Oman",
+                "P": "Poland",
+                "Q": "Qatar",
+                "R": "Russia",
+                "S": "Saudi Arabia",
+                "T": "Tanzania",
+                "U": "Uzbekistan",
+                "V": "Vietnam"
+            }
+        },
+        "options-for-datalist": {
+            "countries": [
+                "Albania",
+                "Belarus",
+                "Cameroon",
+                "Denmark",
+                "Ecuador",
+                "Fiji",
+                "Ghana",
+                "Honduras",
+                "Iceland",
+                "Japan",
+                "Kazakhstan",
+                "Latvia",
+                "Malaysia",
+                "Nepal",
+                "Oman",
+                "Poland",
+                "Qatar",
+                "Russia",
+                "Saudi Arabia",
+                "Tanzania",
+                "Uzbekistan",
+                "Vietnam"
+            ]
+        },
+        "example-checkbox-group": [
+            {
+                "element": "wrap-start",
+                "tag": "div",
+                "attributes": {
+                    "class": "form-check"
+                }
+            },
+            {
+                "element": "input",
+                "value": "1",
+                "attributes": {
+                    "type": "checkbox",
+                    "id": "checkbox1",
+                    "name": "check",
+                    "class": "form-check-input"
+                }
+            },
+            {
+                "element": "label",
+                "text": "Example checkbox",
+                "attributes": {
+                    "class": "form-check-label",
+                    "for": "checkbox1"
+                }
+            },
+            {
+                "element": "wrap-end",
+                "tag": "div"
+            }
+        ],
+        "form-example": {
+            "form": {
+                "attributes": {
+                    "id": "form-id",
+                    "name": "form-name",
+                    "method": "POST",
+                    "action": ""
+                }
+            },
+            "fields": {
+                "example-wrap-start": [
+                    {
+                        "element": "wrap-start",
+                        "tag": "fieldset",
+                        "attributes": {
+                            "class": "border border-2 p-3"
+                        }
+                    }
+                ],
+                "example-legend": [
+                    {
+                        "element": "legend",
+                        "text": "build-form"
+                    }
+                ],
+                "example-snippet": [
+                    {
+                        "element": "snippet",
+                        "name": "snippet-example"
+                    }
+                ],
+                "example-hidden": [
+                    {
+                        "element": "input",
+                        "value": "1",
+                        "attributes": {
+                            "type": "hidden",
+                            "name": "myimputhidden"
+                        }
+                    }
+                ],
+                "example-input-text": [
+                    {
+                        "element": "input",
+                        "value": "default value",
+                        "wrap": {
+                            "attributes": {
+                                "style": "margin-bottom: 10px;"
+                            }
+                        },
+                        "attributes": {
+                            "type": "text",
+                            "name": "myimputtext",
+                            "class": "w-100",
+                            "placeholder": "Enter text"
+                        }
+                    }
+                ],
+                "example-input-datalist": [
+                    {
+                        "element": "input",
+                        "value": "",
+                        "wrap": {},
+                        "attributes": {
+                            "type": "text",
+                            "name": "myimputdatalist",
+                            "class": "w-100",
+                            "placeholder": "Enter text",
+                            "style": "margin-bottom: 10px;",
+                            "list": "conuntries"
+                        }
+                    },
+                    {
+                        "element": "datalist",
+                        "options": [
+                            "Albania",
+                            "Belarus",
+                            "Cameroon",
+                            "Denmark",
+                            "Ecuador",
+                            "Fiji",
+                            "Ghana",
+                            "Honduras",
+                            "Iceland",
+                            "Japan",
+                            "Kazakhstan",
+                            "Latvia",
+                            "Malaysia",
+                            "Nepal",
+                            "Oman",
+                            "Poland",
+                            "Qatar",
+                            "Russia",
+                            "Saudi Arabia",
+                            "Tanzania",
+                            "Uzbekistan",
+                            "Vietnam"
+                        ],
+                        "attributes": {
+                            "id": "conuntries"
+                        }
+                    }
+                ],
+                "example-checkbox-switch": [
+                    {
+                        "element": "wrap-start",
+                        "tag": "div",
+                        "attributes": {
+                            "class": "form-check form-switch"
+                        }
+                    },
+                    {
+                        "element": "input",
+                        "value": "1",
+                        "attributes": {
+                            "type": "checkbox",
+                            "id": "flexSwitchCheckDefault",
+                            "name": "myswitch",
+                            "class": "form-check-input"
+                        }
+                    },
+                    {
+                        "element": "label",
+                        "text": "Example switch",
+                        "attributes": {
+                            "class": "form-check-label",
+                            "for": "flexSwitchCheckDefault"
+                        }
+                    },
+                    {
+                        "element": "wrap-end",
+                        "tag": "div"
+                    }
+                ],
+                "example-checkbox-group": "local::example-checkbox-group",
+                "example-radio-group": [
+                    {
+                        "element": "wrap-start",
+                        "tag": "div",
+                        "attributes": {
+                            "class": "form-check"
+                        }
+                    },
+                    {
+                        "element": "input",
+                        "value": "1",
+                        "attributes": {
+                            "type": "radio",
+                            "id": "flexRadioDefault1",
+                            "name": "myradio",
+                            "_required": "required",
+                            "class": "form-check-input"
+                        }
+                    },
+                    {
+                        "element": "label",
+                        "text": "Example radio opt 1",
+                        "attributes": {
+                            "class": "form-check-label",
+                            "for": "flexRadioDefault1"
+                        }
+                    },
+                    {
+                        "element": "wrap-end",
+                        "tag": "div"
+                    },
+                    {
+                        "element": "wrap-start",
+                        "tag": "div",
+                        "attributes": {
+                            "class": "form-check"
+                        }
+                    },
+                    {
+                        "element": "input",
+                        "value": "2",
+                        "attributes": {
+                            "type": "radio",
+                            "id": "flexRadioDefault2",
+                            "name": "myradio",
+                            "class": "form-check-input"
+                        }
+                    },
+                    {
+                        "element": "label",
+                        "text": "Example radio opt 2",
+                        "attributes": {
+                            "class": "form-check-label",
+                            "for": "flexRadioDefault2"
+                        }
+                    },
+                    {
+                        "element": "wrap-end",
+                        "tag": "div"
+                    }
+                ],
+                "example-select": [
+                    {
+                        "element": "select",
+                        "options": "local::options-for-select->countries",
+                        "attributes": {
+                            "name": "myselect",
+                            "class": "form-select"
+                        }
+                    }
+                ],
+                "example-textarea": [
+                    {
+                        "element": "textarea",
+                        "value": "Enter text",
+                        "wrap": {
+                            "attributes": {
+                                "class": "mt-1"
+                            }
+                        },
+                        "attributes": {
+                            "class": "form-control",
+                            "name": "mytextarea",
+                            "rows": "3"
+                        }
+                    }
+                ],
+                "example-button": [
+                    {
+                        "element": "button",
+                        "value": "1",
+                        "text": "Submit",
+                        "attributes": {
+                            "type": "submit",
+                            "name": "mybutton",
+                            "class": "mt-2 w-100 btn btn-primary"
+                        }
+                    }
+                ],
+                "example-wrap-end": [
+                    {
+                        "element": "wrap-end",
+                        "tag": "fieldset"
+                    }
+                ]
+            }
+        }
+    }
+}

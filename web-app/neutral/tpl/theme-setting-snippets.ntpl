@@ -1,0 +1,132 @@
+{:* Neutral TS - License in the terms described in the LICENSE file. *:}
+
+{:*
+    Overwrite and/or configure the theme snippets
+    ---------------------------------------------
+
+    In some cases it is sufficient to overwrite the value:
+
+        {:snippet; current-theme-body-class >>
+            any-class
+        :}
+
+    Now "current-theme-body-class" will show the new class.
+
+    Other snippets define snippets:
+
+        {:snippet; current-theme-icons-materialicons >>
+            {:snippet; current-theme-icons >>
+                materialicons
+            :}
+        :}
+
+        {:snippet; current-theme-icons-fontawesome >>
+            {:snippet; current-theme-icons >>
+                fontawesome
+            :}
+        :}
+
+    If we do:
+
+        {:snippet; current-theme-icons-materialicons :}
+
+    What we do is define:
+
+        {:snippet; current-theme-icons >>
+            materialicons
+        :}
+
+    So when "current-theme-icons" is called in the template its value will
+    be "materialicons"
+
+    In this way the template can give us configurable options.
+
+    Another strategy for setting options is to define different snippet for
+    different options and use a variable to invoke them.
+
+
+        {:snippet; current-theme-workaround-css:materia >>
+            ..
+        :}
+
+        {:snippet; current-theme-workaround-css:litera >>
+            ..
+        :}
+
+    Then:
+
+        {:snippet; current-theme-workaround-css:{:;currentTheme:} :}
+
+*:}
+
+{:*
+    Icons theme
+
+    Options:
+        {:snippet; current-theme-icons-fontawesome :}
+        {:snippet; current-theme-icons-materialicons :}
+*:}
+{:snippet; current-theme-icons-materialicons :}
+
+{:*
+    Spin theme
+
+    Options:
+        {:snippet; current-theme-spin-set-spin1 :}
+        {:snippet; current-theme-spin-set-spin2 :}
+        {:snippet; current-theme-spin-set-spin3 :}
+        {:snippet; current-theme-spin-set-spin4 :}
+        {:snippet; current-theme-spin-set-spin5 :}
+        {:snippet; current-theme-spin-set-spin6 :}
+*:}
+{:snippet; current-theme-spin-set-spin3 :}
+
+{:*
+    H1 size
+
+    Options:
+        {:snippet; current-theme-heading-medium :}
+        {:snippet; current-theme-heading-small :}
+        or none: big
+*:}
+{:snippet; current-theme-heading-medium :}
+
+{:*
+    Body class
+*:}
+{:snippet; current-theme-body-class >>
+
+:}
+
+{:*
+    navbar colors
+*:}
+{:snippet; current-theme-body-navbar-color >>
+    {:;site->navbarColors->{:snippet; navbar :}:} shadow-sm
+:}
+
+{:*
+    navbar size
+*:}
+{:snippet; current-theme-body-navbar-size >>
+    py-1 py-md-3
+:}
+
+{:*
+    Theme
+*:}
+{:snippet; theme >>
+    {:allow; valid-themes >> {:;site->theme:} :}{:else; flatly :}
+:}
+
+{:*
+    navbar
+*:}
+{:snippet; navbar >>
+    {:allow; valid-navbar >> {:;site->navbar:} :}{:else; primary :}
+:}
+
+{:*
+    Uncomment for disable carousel
+*:}
+{:*  {:snippet; current-theme-body-carousel >> :}  *:}

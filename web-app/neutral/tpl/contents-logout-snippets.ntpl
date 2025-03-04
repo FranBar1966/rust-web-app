@@ -1,0 +1,29 @@
+{:* Neutral TS - License in the terms described in the LICENSE file. *:}
+
+{:*
+    Disable login and carousel
+*:}
+{:snippet; current-theme-login-form-modal >> :}
+{:snippet; current-theme-body-carousel >> :}
+{:snippet; current-theme-spin :}
+
+{:snippet; current-theme-body-content >>
+    {:*
+        If the session is not logged in
+    *:}
+    {:!filled; CONTEXT->SESSION >>
+        {:redirect; js:redirect:top >> / :}
+    :}{:else;
+        {:*
+            If the session is logged in
+        *:}
+        <div class="text-center p-5">{:snippet; spin-2x :}</div>
+        <div class="script-container">
+            <script>
+                document.cookie = "SESSION=; path=/";
+                // Allow time for cookie javascript to run
+                setTimeout(function(){ top.location.href='/' }, 500);
+            </script>
+        </div>
+    :}
+:}
